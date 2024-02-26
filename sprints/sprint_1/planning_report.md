@@ -13,10 +13,8 @@ Group Prep: Research & Investigate NLP Algorithms we can use for B4UAgree
 - Setup Trello for issue tracking 
 - Decide Roles 
 - Create a consistent schedule for need out-of-lab meetings
-- Algorithm Integration Kickoff:
--- Research and initiate integration steps: Find NLP algorithms, Limitations, and Ideas
--- Group meeting and presentation 
--- Decide tasks and goals for experimentation of NLP algorithms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+- Algorithm Integration Kickoff: i) Research and initiate integration steps: Find NLP algorithms, Limitations, and Ideas ii) Group meeting and presentation 
+iii) Decide tasks and goals for experimentation of NLP algorithms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
 # Assignment
 Everyone: Peer Review Proposal, Backlog Issue Creating, Decide Roles, Attend NLP Algorithm meeting, Decide Next Steps for NLP Algorithms, Connect to Git Repo on your personal computer 
