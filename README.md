@@ -6,7 +6,7 @@ B4UAgree is a browser extension plug-in designed to enhance user awareness and u
 ## Repository Layout:
 - Currently: ReadMe file. A major directory called sprints contains weekly sub-directories consisting of planning reports and other relevant documents to the sprint.
   * [/sprints](./sprints): Directory containing sprint-related documents.
-- Expected and Future Files: An HTML file, index.html, for the Chrome Browser extension. A JavaScript (Node.JS) file, main.js, to form the connection between our interface and the NLP algorithm. A Python or Java file to analyze the privacy policy and return comprehensive summaries.
+- Expected and Future Files: An HTML file, index.html, for the Chrome Browser extension. A JavaScript (Node.JS) file, main.js, to form the connection between our interface and the NLP algorithm. A Python file to analyze the privacy policy and return comprehensive summaries. 
 
 ## How to Navigate:
 - Access [/sprints](./sprints) for sprint-related documents.
