@@ -24,11 +24,11 @@ Task breakdown: For the work you plan to do this sprint, summarize the component
 
 Assignment: What will each team member do this sprint?
 
-Liam - NLP library research, outline product structure for milestone 5.
-Mai - NLP library research, outline development process for milestone 5.
-Amani - Manage Trello board and Github repo, outline product structure for milestone 5.
-Mia - Manage team meetings, outline product structure for milestone 5 + submit document.
-Joe - Write and upload sprint documents, outline product design and coding practices for milestone 5.
+- Liam - NLP library research, outline product structure for milestone 5.
+- Mai - NLP library research, outline development process for milestone 5.
+- Amani - Manage Trello board and Github repo, outline product structure for milestone 5.
+- Mia - Manage team meetings, outline development process for milestone 5 + submit document.
+- Joe - Write and upload sprint documents, outline product design and coding practices for milestone 5.
 
 Issue Tracker: How can your instructor view the results of your sprint planning using your issue tracker?
 
