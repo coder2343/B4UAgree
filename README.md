@@ -4,9 +4,16 @@
 B4UAgree is a browser extension plug-in designed to enhance user awareness and understanding of privacy policies encountered during online browsing. Our goal is to empower users to make informed decisions about their online privacy by providing real-time analysis and summaries of privacy policies.
 
 ## Repository Layout:
-- Currently: ReadMe file. A major directory called sprints contains weekly sub-directories consisting of planning reports and other relevant documents to the sprint.
+**Current Contents:**
   * [/sprints](./sprints): Directory containing sprint-related documents.
-- Expected and Future Files: An HTML file, index.html, for the Chrome Browser extension. A JavaScript (Node.JS) file, main.js, to form the connection between our interface and the NLP algorithm. A Python file to analyze the privacy policy and return comprehensive summaries. 
+  * [/test-privacy](./test-privacy): Directory for privacy-related testing.
+  * [/nlp-backend](./nlp-backend): Directory that houses backend logic for Natural Language Processing.
+  * `.DS_Store`: System file (Desktop Services Store)  
+
+**Expected and Future Files:**
+- HTML file: `index.html` for the Chrome Browser extension.
+- JavaScript (Node.JS) file: `main.js` to connect our interface with the NLP algorithm.
+- Python file: To analyze the privacy policy and return comprehensive summaries.
 
 ## How to Navigate:
 - Access [/sprints](./sprints) for sprint-related documents.
