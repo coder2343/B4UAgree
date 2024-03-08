@@ -2,6 +2,7 @@
 
 ## Capacity:
 Our team's capacity for this sprint is expected to be relatively the same as the previous sprint. Each team member will dedicate the time they have available based on their commitments and responsibilities. The accuracy of time estimates for last week's tasks will be considered in task planning.
+**Note:** One of our team members will be observing Ramadan, starting on March 11th/12th. We are committed to providing religious accommodations as needed, and tasks will be adjusted accordingly to ensure everyone's well-being and comfort.
 
 ## Goals:
 1. **NLP Algorithm Integration:**
