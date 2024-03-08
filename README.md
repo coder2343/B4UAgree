@@ -16,13 +16,13 @@ B4UAgree is a browser extension plug-in designed to enhance user awareness and u
 - Python file: To analyze the privacy policy and return comprehensive summaries.
 
 ## How to Navigate:
-- Access [/sprints](./sprints) for sprint-related documents.
+- Access [/sprints](./sprints) for sprint planning and review reports.
 
 ## Issue Tracking:
 We use a [Trello board](https://trello.com/invite/b/yHP9CPjB/ATTI94bb9185c9e2341b7aa2fe8585214bb5811623F3/b4uagree) for issue tracking. Each sprint planning report creates a set of Trello cards that map to specific tasks assigned to team members. We prioritize transparency and collaboration by encouraging the community to contribute, report issues, or suggest improvements through our Trello board.
 
 ## Sprint Planning:
-- Sprint planning reports are found in the [/sprints](./sprints) directory.
+- Sprint planning and review reports are found in the [/sprints](./sprints) directory.
 - Each sprint corresponds to a milestone, and tasks for the sprint are created as cards on our Trello board.
 - The progress of each sprint can be tracked through the [Trello board](https://trello.com/invite/b/yHP9CPjB/ATTI94bb9185c9e2341b7aa2fe8585214bb5811623F3/b4uagree) associated with the project.
 
