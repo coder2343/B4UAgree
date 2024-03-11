@@ -8,6 +8,7 @@ B4UAgree is a browser extension plug-in designed to enhance user awareness and u
   * [/sprints](./sprints): Directory containing sprint-related documents.
   * [/test-privacy](./test-privacy): Directory for privacy-related testing.
   * [/nlp-backend](./nlp-backend): Directory that houses backend logic for Natural Language Processing.
+  * [/B4UAgree-Extension](./B4UAgree-Extention): Directory containing the front-end setup for the B4UAgree browser extension.
   * `.DS_Store`: System file (Desktop Services Store)  
 
 **Expected and Future Files:**
