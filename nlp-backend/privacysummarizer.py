@@ -1,5 +1,5 @@
 from summarizer.sbert import SBertSummarizer
-
+from bs4 import BeautifulSoup, NavigableString, Tag
 
 
 def receive_text(self):
@@ -7,7 +7,23 @@ def receive_text(self):
 
 
 def html_To_Text(self,html):
-    pass
+    f = open("output/privacyPolicy.txt", "a")
+    soup = BeautifulSoup(html, 'html.parser')
+    for header in soup.find_all({'h3','h2','h1'}):
+        nextNode = header
+        while True:
+            nextNode = nextNode.nextSibling
+            if nextNode is None:
+                break
+            if isinstance(nextNode,NavigableString ):
+                print (nextNode.strip())
+            if isinstance(nextNode, Tag):
+                if nextNode.name == "h2"or nextNode.name == "h1" or nextNode.name == "h3" :
+                    #print(soup.find(string=nextNode.text.strip()))
+                    break
+                f.write(nextNode.get_text(strip=True).strip())
+
+
 
 def get_Summary(text,num_sentences):
     model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
