@@ -6,7 +6,8 @@ def receive_text(self):
     pass
 
 
-def html_To_Text(self,html):
+def html_to_text(self,html):
+    """Function take html file and extract given text."""
     f = open("output/privacyPolicy.txt", "a")
     soup = BeautifulSoup(html, 'html.parser')
     for header in soup.find_all({'h3','h2','h1'}):
@@ -25,13 +26,15 @@ def html_To_Text(self,html):
 
 
 
-def get_Summary(text,num_sentences):
+def get_summary(text,num_sentences):
+    """Function take text file and outputs given sumary of said text useing nlp model."""
     model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
     result = model(text, num_sentences=num_sentences)
     return result
 
-def send_Summary(self,result):
+def send_summary(self,result):
+    """Function take summary and saves text file"""
     f = open("output/summary.txt", "a")
     f.write(result)
     f.close()
-    pass
+
