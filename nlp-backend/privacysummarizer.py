@@ -32,9 +32,8 @@ def get_summary(text,num_sentences):
     result = model(text, num_sentences=num_sentences)
     return result
 
-def send_summary(self,result):
+def send_summary(result):
     """Function take summary and saves text file"""
     f = open("output/summary.txt", "a")
     f.write(result)
     f.close()
-
