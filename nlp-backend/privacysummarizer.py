@@ -8,7 +8,7 @@ def receive_text(self):
 
 def html_to_text(self,html):
     """Function take html file and extract given text."""
-    f = open("output/privacyPolicy.txt", "a")
+    f = open("output/privacyPolicy.txt", "a", encoding="utf-8")
     soup = BeautifulSoup(html, 'html.parser')
     for header in soup.find_all({'h3','h2','h1'}):
         nextNode = header
@@ -23,6 +23,7 @@ def html_to_text(self,html):
                     #print(soup.find(string=nextNode.text.strip()))
                     break
                 f.write(nextNode.get_text(strip=True).strip())
+    f.close()
 
 
 
@@ -34,6 +35,6 @@ def get_summary(text,num_sentences):
 
 def send_summary(result):
     """Function take summary and saves text file"""
-    f = open("output/summary.txt", "a")
+    f = open("output/summary.txt", "a", encoding="utf-8")
     f.write(result)
     f.close()
