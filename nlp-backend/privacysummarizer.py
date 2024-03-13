@@ -1,3 +1,4 @@
+"""Module providing a function for sumerizing and bs4 is for webscrapeing."""
 from summarizer.sbert import SBertSummarizer
 from bs4 import BeautifulSoup, NavigableString, Tag
 
