@@ -5,8 +5,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 def receive_text(self):
     pass
 
-
-def html_to_text(self,html):
+def html_to_text(html):
     """Function take html file and extract given text."""
     f = open("output/privacyPolicy.txt", "a", encoding="utf-8")
     soup = BeautifulSoup(html, 'html.parser')
@@ -24,8 +23,6 @@ def html_to_text(self,html):
                     break
                 f.write(nextNode.get_text(strip=True).strip())
     f.close()
-
-
 
 def get_summary(text,num_sentences):
     """Function take text file and outputs given sumary of said text useing nlp model."""
