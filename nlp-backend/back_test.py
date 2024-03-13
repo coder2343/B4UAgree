@@ -1,10 +1,20 @@
-# back_test
+## back_test
 # File containing all the tests for the back-end of B4UAgree using pytest
+## TO ADD NEW TEST:
+# if adding tests for new module, import that module in the IMPORTS section
+# if adding tests for new function, create a class starting with Test
+# if adding test to existing class, add new def starting with test_
+# if a test suite is not yet stable, keep in WIP TESTS, maintain COMPLETE TESTS as fully functional
+
+
+## SECTION: IMPORTS
 
 import pytest
 
 # import privacysummarizer
 
+
+## SECTION: SAMPLE TEST SUITE
 def useless():
     raise SystemExit(1)
 
@@ -19,6 +29,10 @@ class TestSample:
     def test_3(self):
         x = "this"
         assert "h" in x
+
+## SECTION: COMPLETED TESTS
+
+## SECTION: WIP TESTS
 
 # tests for the get_Summary procedure in privacysummarizer.py
 #class TestSummarizer:
