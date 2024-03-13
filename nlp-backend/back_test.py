@@ -23,11 +23,11 @@ class TestSample:
 # tests for the get_Summary procedure in privacysummarizer.py
 #class TestSummarizer:
 #    #get text
-#    f_g=open(grinnell_privacy.txt,'r')
+#    f_g=open(testtexts/grinell_privacy.txt,'r')
 #    rawText_grinnell=f_g.read()
 #    summTest_grinnell=privacysummarizer.get_Summary(rawText_grinnell,4)
 #
 #    def test_match(self):
-#        s_g=open(grinnell_privacy_summ.txt, 'txt')
+#        s_g=open(testtexts/grinnell_privacy_summ.txt, 'txt')
 #        rawText_grinnellSumm=s_g.read()
 #        assert summTest_grinnell == rawText_grinnellSumm
