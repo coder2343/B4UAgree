@@ -11,18 +11,18 @@ def html_to_text(html):
     f = open("output/privacyPolicy.txt", "a", encoding="utf-8")
     soup = BeautifulSoup(html, 'html.parser')
     for header in soup.find_all({'h3','h2','h1'}):
-        nextNode = header
+        next_node = header
         while True:
-            nextNode = nextNode.nextSibling
-            if nextNode is None:
+            next_node = next_node.nextSibling
+            if next_node is None:
                 break
-            if isinstance(nextNode,NavigableString ):
-                print (nextNode.strip())
-            if isinstance(nextNode, Tag):
-                if nextNode.name == "h2"or nextNode.name == "h1" or nextNode.name == "h3" :
+            if isinstance(next_node,NavigableString ):
+                print (next_node.strip())
+            if isinstance(next_node, Tag):
+                if next_node.name == "h2"or next_node.name == "h1" or next_node.name == "h3" :
                     #print(soup.find(string=nextNode.text.strip()))
                     break
-                f.write(nextNode.get_text(strip=True).strip())
+                f.write(next_node.get_text(strip=True).strip())
     f.close()
 
 def get_summary(text,num_sentences):
