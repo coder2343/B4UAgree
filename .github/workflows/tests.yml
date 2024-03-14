@@ -1,0 +1,24 @@
+
+# Workflow for automated testing
+
+name: tests
+
+# Runs on push and pull requests in main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Job for testing the back end of the product
+  test_back_end:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run back end test file
+        run: pytest back_test.py
