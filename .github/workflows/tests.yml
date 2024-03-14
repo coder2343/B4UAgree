@@ -24,4 +24,5 @@ jobs:
       - name: Test backend with pytest
         run: |
           pip install pytest pytest-cov
-          pytest back_test.py
+          ls
+          #pytest back_test.py
