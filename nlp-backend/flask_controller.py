@@ -4,15 +4,18 @@ from privacysummarizer import get_summary
 
 app = Flask(__name__)
 
-# privacy_policies = [
-#  { 'id': 1, 'policy': '', 'summary':''},
-#  { 'id': 2, 'name': 'Kate' },
-#  { 'id': 3, 'name': 'Joe' }
-# ]
 
-# nextPrivacyPolicyID = 1
+# what we need long term 
+    ### way to run analysis on multiple privacy polices ( way to track diffrent quires)
+    ### way to ensure this can be run by multiple users (add database or another solution like dictionary or other data structure)
 
-# jsonify privacy policy 
+## how run 
+##### ensure flask is installed
+###### python3 test_flask.py
+##### api endpoints that can be accesed 
+######   127.0.0.1:5000/sum or 127.0.0.1:5000/sendpolicy (note that the ip address change on  network with computer)
+########  use postman as easy way to interact with api endpoints.
+
 
 PrivacyPolicy= []
 # function gets privacy policy
@@ -23,7 +26,6 @@ def get_privacy_policy():
   PrivacyPolicy.append(retrivedPolicy)
   print(PrivacyPolicy)
   return PrivacyPolicy
-  
 
 # get request 
 @app.route('/sum', methods=['GET'])
