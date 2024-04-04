@@ -30,7 +30,6 @@ def get_privacy_policy():
 # get request 
 @app.route('/sum', methods=['GET'])
 def send_summary():
-  print(PrivacyPolicy.pop())
   make_sum= get_summary(PrivacyPolicy.pop(),5)
   return make_sum
 
