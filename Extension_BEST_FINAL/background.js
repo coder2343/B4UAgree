@@ -5,13 +5,23 @@ chrome.action.onClicked.addListener((tab) => {
     chrome.scripting.executeScript({
       target: {tabId: tab.id},
       files: ['content.js']
-    });
+    }); 
   });
 
 // listens for a message from content.js 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        // awaits for message and then will make the popup appear       
+        // awaits for message and then will make the popup appear
+         if (request.message === "open") {
+          chrome.windows.create({url: "index.html", 
+            type: "popup", 
+            width:  400, 
+            height: 800, 
+            top: 0,
+            left: 0, 
+            focused : true, 
+          }); 
+        }  
     }
 );
 

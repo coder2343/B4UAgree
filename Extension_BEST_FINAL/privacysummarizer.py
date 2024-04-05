@@ -1,11 +1,25 @@
 """Module providing a function for sumerizing and bs4 is for webscrapeing."""
 from summarizer.sbert import SBertSummarizer
 from bs4 import BeautifulSoup, NavigableString, Tag
-
+import os 
+import re
 
 def receive_text(self):
     pass
 
+# update_html content with created summary
+def update_html(summary): 
+    base = os.path.dirname(os.path.abspath(__file__))
+    html = open(os.path.join(base, "index.html"))
+    soup = BeautifulSoup(html, "html.parser")
+    old_text = soup.find('p', id='content')
+    tag = soup.new_tag("p", id='content')
+    tag.string = summary
+    old_text.replace_with(tag)
+    with open("index.html", "wb") as f_output:
+        f_output.write(soup.prettify("utf-8"))
+
+# in the works function from Liam                              
 def html_to_text(html):
     """Function take html file and extract given text."""
     f = open("output/privacyPolicy.txt", "a", encoding="utf-8")
@@ -25,12 +39,15 @@ def html_to_text(html):
                 f.write(next_node.get_text(strip=True).strip())
     f.close()
 
+# compute summary from SBertSummarizer
 def get_summary(text,num_sentences):
     """Function take text file and outputs given sumary of said text useing nlp model."""
     model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
     result = model(text, num_sentences=num_sentences)
+    update_html(result)
     return result
 
+# function in the works from Liam 
 def send_summary(result):
     """Function take summary and saves text file"""
     f = open("output/summary.txt", "a", encoding="utf-8")

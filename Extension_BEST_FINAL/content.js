@@ -7,12 +7,14 @@ function findLink() {
     let link = document.evaluate("//a[contains(text(), 'Policy')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
     // can't find it <a></a>? then try to find it in a button
     if (link === null) {
-        link = document.evaluate("//button[contains(text(), 'Policy')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+       // link = document.evaluate("//button[contains(text(), 'Policy')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
         // can't find it in button? then send error message to html and return
-        if (link === null) {
-            // MH -- insert html content for index.html
+        //if (link === null) {
+            
+            alert("link not found! another use case and further finding link expansion"); 
             return "empty"
-        }
+    
+        //}
     }
     return link
 }
@@ -38,46 +40,51 @@ function parsePolicy(html) {
 
 // fetchLink() grabs the HTML content from the found link
 function fetchLink(link) {
-    // travel to the link and get content
-    fetch(link).then(function (response) {
-        return response.text();
-    }).then(function (html) {
-        // `html` is the content from the webpage 
-        // we need to extract only the text privacy policy webpage 
-        let policy_text = parsePolicy(html);
+    if (link != "empty") {
+        // travel to the link and get content
+        fetch(link).then(function (response) {
+            return response.text();
+        }).then(function (html) {
+            // `html` is the content from the webpage 
+            // we need to extract only the text privacy policy webpage 
+            let policy_text = parsePolicy(html);
 
-        // turn our content to JSON object for our back-end analysis 
-        const my_obj = {"privacyPolicy": policy_text};
+            // turn our content to JSON object for our back-end analysis 
+            const my_obj = {"privacyPolicy": policy_text};
 
-        // post content -- send privacy policy to backend 
-        fetch("http://127.0.0.1:5000/sendpolicy", {
-        mode:  'cors', 
-        method: 'POST', 
-        headers: { "Content-type": "application/json"},
-        body: JSON.stringify(my_obj)
-        }).then(function (response) {
-            console.log("i'm in response!")
-            console.log(response.text()); 
-            if (response.status === 200) {
-                // get content -- retrieve summary from backend 
-                fetch("http://127.0.0.1:5000/sum", { 
-                    mode:  'cors', 
-                    method: 'GET',
-                }).then(function (response) {
-                    console.log("i'm in response! 2!")
-                    return response.text();
-                }).then(function (data) {
-                    console.log("i'm data");
-                    console.log(data);
-                    // insert code to send message and/or update index html with content
-                }).catch(function (error) {
-                    console.log('Request failed', error);
-                });
-            }
-    });
-    }).catch(function (err) {
-        // an error occured
-        console.warn('Something went wrong.', err);
-    });
+            // post content -- send privacy policy to backend 
+            fetch("http://127.0.0.1:5000/sendpolicy", {
+            mode:  'cors', 
+            method: 'POST', 
+            headers: { "Content-type": "application/json"},
+            body: JSON.stringify(my_obj)
+            }).then(function (response) {
+                console.log(response.text()); 
+                if (response.status === 200) {
+                    // get content -- retrieve summary from backend 
+                    fetch("http://127.0.0.1:5000/sum", { 
+                        mode:  'cors', 
+                        method: 'GET',
+                    }).then(function (response) {
+                        return response.text();
+                    }).then(function (data) {
+                        console.log(data);
+                        // open popup and send ready summary to its contents
+                        (async () => {
+                            const response = await chrome.runtime.sendMessage({message: "open"});
+                            // do something with response here, not outside the function
+                            console.log(response);
+                        })();
+                        // insert code to send message and/or update index html with content
+                    }).catch(function (error) {
+                        console.log('Request failed', error);
+                    });
+                }
+        });
+        }).catch(function (err) {
+            // an error occured
+            console.warn('Something went wrong.', err);
+        });
+    }
 }
 

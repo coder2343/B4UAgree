@@ -5,10 +5,10 @@
     "manifest_version": 3,
     "author": "Mia Hines",
     "action": {
-        "default_title": "B4UAgree"
-      },
-      "permissions": ["activeTab", "scripting", "nativeMessaging", "http://127.0.0.1:5000/sum", "http://127.0.0.1:5000/sendpolicy"],
-      "background": {
-        "service_worker": "background.js"
-      }
+      "default_title" : "B4UAgree Summary"
+    },
+    "permissions": ["activeTab", "tabs", "scripting", "nativeMessaging", "http://127.0.0.1:5000/sum", "http://127.0.0.1:5000/sendpolicy", "index.html"],
+    "background": {
+      "service_worker": "background.js"
+    }
 }
