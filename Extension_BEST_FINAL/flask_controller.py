@@ -1,5 +1,5 @@
 import json
-from flask import Flask, jsonify, request
+from flask import Flask, request
 from privacysummarizer import get_summary
 from flask_cors import CORS
 
@@ -22,6 +22,7 @@ PrivacyPolicy= []
 # function gets privacy policy
 @app.route('/sendpolicy', methods=['POST'])
 def get_privacy_policy():
+  """Function for sending text to back end  ensrue json body is {'privacyPolicy': 'policy text}."""
   request_data = request.get_json()
   retrivedPolicy= request_data['privacyPolicy']
   PrivacyPolicy.append(retrivedPolicy)
@@ -30,6 +31,7 @@ def get_privacy_policy():
 # get request 
 @app.route('/sum', methods=['GET'])
 def send_summary():
+  """Function for sending  summary to front end."""
   make_sum= get_summary(PrivacyPolicy.pop(),5)
   return json.dumps({"summary": make_sum})
 
