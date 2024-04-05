@@ -8,11 +8,10 @@ chrome.action.onClicked.addListener((tab) => {
     });
   });
 
-// listens for a message from content.js -- the message holds our JSON object with the privacy policy
+// listens for a message from content.js 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-
+        // awaits for message and then will make the popup appear       
     }
-
 );
 
