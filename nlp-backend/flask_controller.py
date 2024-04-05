@@ -1,10 +1,12 @@
 import json
 from flask import Flask, jsonify, request
 from privacysummarizer import get_summary
+from flask_cors import CORS
+
 
 app = Flask(__name__)
 
-
+CORS(app)
 # what we need long term 
     ### way to run analysis on multiple privacy polices ( way to track diffrent quires)
     ### way to ensure this can be run by multiple users (add database or another solution like dictionary or other data structure)
