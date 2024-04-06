@@ -5,6 +5,7 @@ fetchLink(findLink())
 function findLink() {
     // attempt to find link in a <a></a> in the document 
     let link = document.evaluate("//a[contains(text(), 'Policy')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+    console.log(link)
     // can't find it <a></a>? then try to find it in a button
     if (link === null) {
        // link = document.evaluate("//button[contains(text(), 'Policy')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
@@ -83,6 +84,7 @@ function fetchLink(link) {
         });
         }).catch(function (err) {
             // an error occured
+            alert("link not found! another use case and further finding link expansion"); 
             console.warn('Something went wrong.', err);
         });
     }
