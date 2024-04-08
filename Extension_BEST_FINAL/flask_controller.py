@@ -22,6 +22,7 @@ PrivacyPolicy= []
 # function gets privacy policy
 @app.route('/sendpolicy', methods=['POST'])
 def get_privacy_policy():
+  "Gets Privacy Policy from post request with json body {  'privacyPolicy': body of privacy policy}"
   request_data = request.get_json()
   retrivedPolicy= request_data['privacyPolicy']
   PrivacyPolicy.append(retrivedPolicy)
@@ -30,6 +31,7 @@ def get_privacy_policy():
 # get request 
 @app.route('/sum', methods=['GET'])
 def send_summary():
+  "sends  summary of given privacy policy to front end"
   make_sum= get_summary(PrivacyPolicy.pop(),5)
   return json.dumps({"summary": make_sum})
 
