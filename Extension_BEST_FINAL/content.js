@@ -1,3 +1,13 @@
+/*
+ * Filename: content.js
+ * Description: This file hosts functions that:
+ * * * Find the link to the privacy policy on the current webpage
+ * * * Fetch the HTML from the found link
+ * * * Parse the HTML of the privacy policy found on the current webpage
+ * * * Send the parsed file to backend to write to popup
+ * * * Send the message to background.js for background to open popup
+ */
+
 
 fetchLink(findLink())
 
