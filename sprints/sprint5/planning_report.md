@@ -26,7 +26,7 @@ Refer to the issue tracker on our [Trello board](https://trello.com/b/yHP9CPjB/b
 ## Assignment:
 - **Amani:**
   - Front-End Testing Task
-  - Rating System for Privacy Policy Safety + Data Sharing (in conjuction with Mai)
+  - Rating System for Privacy Policy Safety + Data Sharing (in conjunction with Mai)
  
 - **Joe:**
   - Back-End Testing Task
@@ -34,10 +34,11 @@ Refer to the issue tracker on our [Trello board](https://trello.com/b/yHP9CPjB/b
   - (Potential) Milestone Write-Up
   
 - **Liam:**
-  - Prepare Production Server 
+  - Prepare Production Server
+  - Rating System for Privacy Policy Safety + Data Sharing (within Discussion and Research)
 
 - **Mai:**
-  - Rating System for Privacy Policy Safety + Data Sharing (in conjuction with Mai)
+  - Rating System for Privacy Policy Safety + Data Sharing (in conjunction with Mai)
   - Research + Experiment on Obtaining Critical Information in Privacy Policy Summarizing 
 
 - **Mia:**
