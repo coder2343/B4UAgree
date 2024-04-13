@@ -2,3 +2,4 @@ Flask
 Gunicorn
 Torch
 bert-extractive-summarizer
+sentence-transformers
