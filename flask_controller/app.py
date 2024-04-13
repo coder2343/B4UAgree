@@ -6,23 +6,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+  return 'Hello, World!'
 
-PrivacyPolicy= []
-# function gets privacy policy
-@app.route('/sendpolicy', methods=['POST'])
-def get_privacy_policy():
-  request_data = request.get_json()
-  retrivedPolicy= request_data['privacyPolicy']
-  PrivacyPolicy.append(retrivedPolicy)
-  print(PrivacyPolicy)
-  return PrivacyPolicy
+# PrivacyPolicy= []
+# # function gets privacy policy
+# @app.route('/sendpolicy', methods=['POST'])
+# def get_privacy_policy():
+#   request_data = request.get_json()
+#   retrivedPolicy= request_data['privacyPolicy']
+#   PrivacyPolicy.append(retrivedPolicy)
+#   print(PrivacyPolicy)
+#   return PrivacyPolicy
 
-# get request 
-@app.route('/sum', methods=['GET'])
-def send_summary():
-  make_sum= get_summary(PrivacyPolicy.pop(),5)
-  return make_sum
-
-if __name__ == '__main__':
-  app.run(port=5000)
+# # get request 
+# @app.route('/sum', methods=['GET'])
+# def send_summary():
+#   make_sum= get_summary(PrivacyPolicy.pop(),5)
+#   return make_sum
