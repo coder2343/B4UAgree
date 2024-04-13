@@ -1,12 +1,20 @@
 from flask import Flask, request
 import json
 from nlp_code import get_summary
+from summarizer.sbert import SBertSummarizer
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
   return 'Hello, World!'
+
+
+def get_summary(text,num_sentences):
+  """Function take text file and outputs given sumary of said text useing nlp model."""
+  model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
+  result = model(text, num_sentences=num_sentences)
+  return result
 
 # PrivacyPolicy= []
 # # function gets privacy policy
