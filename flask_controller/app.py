@@ -8,8 +8,6 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-
-
 PrivacyPolicy= []
 # function gets privacy policy
 @app.route('/sendpolicy', methods=['POST'])
@@ -25,3 +23,6 @@ def get_privacy_policy():
 def send_summary():
   make_sum= get_summary(PrivacyPolicy.pop(),5)
   return make_sum
+
+if __name__ == '__main__':
+  app.run(port=5000)
